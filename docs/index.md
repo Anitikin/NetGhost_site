@@ -17,42 +17,42 @@ features:
     }
   - {
       title: "Уголовный кодекс РФ",
-      details: "Ещё одна фича."
+      link: "allNPA/criminal_code_RF/index"
     }
   - {
       title: "Административный кодекс КоАП РФ",
-      details: "Ещё одна фича."
+      link: "allNPA/administrative_code_RF/index"
     }
   - {
       title: "Гражданский кодекс РФ",
-      details: "Ещё одна фича."
+      link: "allNPA/civil_code_RF/index"
     }
   - {
       title: "Постановления Правительства",
-      details: "Ещё одна фича."
+      link: "allNPA/government_resolutions/index"
     }
   - {
       title: "Приказы",
-      details: "Ещё одна фича."
+      link: "allNPA/orders/index"
     }
   - {
       title: "Указы Президента",
-      details: "Ещё одна фича."
+      link: "allNPA/presidential_decrees/index"
     }
   - {
       title: "Международные стандарты и ГОСТы",
-      details: "Ещё одна фича."
+      link: "allNPA/international_standards_GOST/index"
     }
   - {
       title: "Информационные письма",
-      details: "Ещё одна фича."
+      link: "allNPA/information_letters/index"
     }
   - {
       title: "Методические рекомендации",
-      details: "Ещё одна фича."
+      link: "allNPA/methodological_recommendations/index"
     }
   - {
       title: "Официальные разъяснения",
-      details: "Ещё одна фича."
+      link: "allNPA/official_explanations/index"
     }
 ---

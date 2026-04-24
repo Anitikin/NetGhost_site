@@ -10,13 +10,6 @@ export default {
       { text: "Contact", link: "/contact" },
       { text: "Guide", link: "/guide" },
       { text: "Configs", link: "/configs" },
-      { text: "Changelog", 
-      items: [
-    { text: "v0.0.1", link: "/item-1" },
-    { text: "v0.0.2", link: "/item-2" },
-    { text: "v0.0.3", link: "/item-3" },
-    ],
-    },
   ],
     sidebar: {
       '/constitutiion':      // Sidebar для Конституции + НПА
