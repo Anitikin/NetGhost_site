@@ -1,4 +1,5 @@
 export default {
+  base: '/NetGhost_site/',
   title: "NetGhost",
   description: "An awesome docs template built by me",
   themeConfig: {
