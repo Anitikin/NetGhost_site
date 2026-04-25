@@ -11,19 +11,27 @@ export default {
       { text: "Guide", link: "/guide" },
       { text: "Configs", link: "/configs" },
   ],
-    sidebar: {
-      '/constitutiion':      // Sidebar для Конституции + НПА
+    
+     sidebar: {
+      '/allNPA/': [
         {
-          text: 'Конституция РФ',
-          collapsible: true,
           items: [
-            { text: 'Главная', link: '/konstitutsiya/' },
-            { text: 'Глава 1', link: '/konstitutsiya/glava-1' },
-            { text: 'Глава 2', link: '/konstitutsiya/glava-2' },
-            // Добавьте статьи: { text: 'Статья 1', link: '/konstitutsiya/statya-1' }
-          ]
+            { text: 'Конституция РФ', link: 'allNPA/constitution/index' },
+            { text: 'Федеральный закон РФ', link: 'allNPA/federal_law_RF/index' },
+            { text: 'Уголовный кодекс РФ', link: 'allNPA/criminal_code_RF/index' },
+            { text: 'Административный кодекс КоАП РФ', link: 'allNPA/administrative_code_RF/index' },
+            { text: 'Гражданский кодекс РФ', link: 'allNPA/civil_code_RF/index' },
+            { text: 'Постановления Правительства', link: 'allNPA/government_resolutions/index' },
+            { text: 'Приказы', link: 'allNPA/orders/index' },
+            { text: 'Указы Президента', link: 'allNPA/presidential_decrees/index' },
+            { text: 'Международные стандарты и ГОСТы', link: 'allNPA/international_standards_GOST/index' },
+            { text: 'Информационные письма', link: 'allNPA/information_letters/index' },
+            { text: 'Методические рекомендации', link: 'allNPA/methodological_recommendations/index' },
+            { text: 'фициальные разъяснения', link: 'allNPA/official_explanations/index' },
+          ],
         },
-      },    
+      ],
+  },
    footer: {
       message: 'Выпущено под <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.', 
       copyright: 'Copyright © 2026 NetGhost'  
