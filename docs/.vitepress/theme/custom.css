@@ -66,3 +66,46 @@ body {
 ::-webkit-scrollbar-track { background: #f5f5f5; }
 ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #aaff00; }
+
+/* Заголовок с зелёным фоном */
+.vp-doc h1 {
+  color: #111111 !important;
+  background-color: #aaff00;
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+
+/* Убираем буллеты */
+.vp-doc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Карточка */
+.vp-doc ul li {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 0;
+}
+
+/* Ссылка внутри карточки */
+.vp-doc ul li a {
+  display: block;
+  padding: 16px 20px;
+  color: #111111 !important;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none !important;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.vp-doc ul li a:hover {
+  background-color: #e0e0e0;
+}

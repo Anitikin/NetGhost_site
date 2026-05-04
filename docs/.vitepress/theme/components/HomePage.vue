@@ -10,7 +10,9 @@
           нормативно-правовых актов и методической базы в сфере ИБ
         </p>
       </div>
-
+      <div class="hero__ghost">
+        <img src="/images/ghost_big.png" alt="ghost" width="250" />
+      </div>
       
     </section>
 
@@ -48,7 +50,9 @@
           </p>
           <a href="#" class="ai-section__btn">Болтать онлайн</a>
         </div>
-        
+        <div class="ai-section__ghost">
+          <img src="/images/ghost_big.png" alt="assistant" width="180" />
+        </div>
 
       </div>
     </section>
