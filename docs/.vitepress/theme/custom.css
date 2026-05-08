@@ -74,6 +74,7 @@ body {
   display: inline-block;
   padding: 4px 16px;
   border-radius: 8px;
+  width: fit-content;
 }
 
 /* Убираем буллеты */
@@ -108,4 +109,40 @@ body {
 
 .vp-doc ul li a:hover {
   background-color: #e0e0e0;
+}
+
+.vp-doc p {
+  margin-bottom: 16px;
+}
+
+/* Параграфы после нумерованного списка на том же уровне */
+.vp-doc ol + p {
+  padding-left: 4px;
+}
+
+/* Таблицы НПА */
+.vp-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.vp-doc table th {
+  background-color: #aaff00;
+  color: #111111;
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.vp-doc table td {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.vp-doc table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
