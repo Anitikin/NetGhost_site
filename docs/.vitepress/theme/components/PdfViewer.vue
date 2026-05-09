@@ -8,15 +8,11 @@
       class="pdf-iframe"
     ></iframe>
 
-    <a
+    <iframe
       v-else
-      :href="src"
-      target="_blank"
-      rel="noopener"
-      class="pdf-button"
-    >
-      {{ label }}
-    </a>
+      :src="`https://docs.google.com/viewer?url=${fullUrl}&embedded=true`"
+      class="pdf-iframe-mobile"
+    ></iframe>
 
   </div>
 </template>
