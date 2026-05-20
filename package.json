@@ -8,9 +8,9 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "add-urls":    "node scripts/addUrls.js",
+    "add-urls": "node scripts/addUrls.js",
     "upload-docs": "node scripts/uploadDocs.js",
-    "build":       "node scripts/addUrls.js && vitepress build"
+    "build": "node scripts/addUrls.js && vitepress build"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "vue": "^3.5.32"
   },
   "dependencies": {
+    "@documate/vue": "^0.3.1",
     "pdfjs-dist": "^5.7.284"
   }
 }

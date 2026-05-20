@@ -2,6 +2,20 @@ export default {
   base: '/NetGhost_site/',
   title: "NetGhost",
   description: "An awesome docs template built by me",
+  
+  // Добавляем секцию vite для обхода CORS-ошибки сети
+  vite: {
+    server: {
+      proxy: {
+        '/api-ai': {
+          target: 'https://api.proxyapi.ru/v1',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api-ai/, '')
+        }
+      }
+    }
+  },
+
   themeConfig: {
     logo: "/ghost.png",
     siteTitle: "NetGhost",
@@ -10,9 +24,9 @@ export default {
       { text: "Contact", link: "/contact" },
       { text: "Guide", link: "/guide" },
       { text: "Configs", link: "/configs" },
-  ],
+    ],
     
-     sidebar: {
+    sidebar: {
       '/allNPA/': [
         {
           items: [
@@ -31,11 +45,10 @@ export default {
           ],
         },
       ],
-  },
-   footer: {
+    },
+    footer: {
       message: 'Выпущено под <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.', 
       copyright: 'Copyright © 2026 NetGhost'  
     }, 
-
   },
 };
