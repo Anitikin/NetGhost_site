@@ -1,4 +1,5 @@
 ---
+url: https://anitikin.github.io/NetGhost_site//allNPA/civil_code_RF/
 prev: false
 next: false
 ---

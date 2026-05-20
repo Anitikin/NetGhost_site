@@ -1,4 +1,5 @@
 ---
+url: https://anitikin.github.io/NetGhost_site//allNPA/international_standards_GOST/articles/gost-r-34.13-2015.html
 prev: false
 next: false
 ---

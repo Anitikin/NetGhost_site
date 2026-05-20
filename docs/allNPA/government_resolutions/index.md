@@ -1,4 +1,5 @@
 ---
+url: https://anitikin.github.io/NetGhost_site//allNPA/government_resolutions/
 prev: false
 next: false
 ---

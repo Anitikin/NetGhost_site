@@ -7,7 +7,10 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "add-urls":    "node scripts/addUrls.js",
+    "upload-docs": "node scripts/uploadDocs.js",
+    "build":       "node scripts/addUrls.js && vitepress build"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,10 @@
   "type": "commonjs",
   "devDependencies": {
     "vitepress": "^1.6.4",
+    "vitepress-knowledge": "^0.4.1",
     "vue": "^3.5.32"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^5.7.284"
   }
 }

@@ -1,4 +1,5 @@
 ---
+url: https://anitikin.github.io/NetGhost_site//allNPA/administrative_code_RF/
 prev: false
 next: false
 ---

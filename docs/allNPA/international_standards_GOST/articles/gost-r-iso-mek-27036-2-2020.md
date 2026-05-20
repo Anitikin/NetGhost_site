@@ -1,4 +1,5 @@
 ---
+url: https://anitikin.github.io/NetGhost_site//allNPA/international_standards_GOST/articles/gost-r-iso-mek-27036-2-2020.html
 prev: false
 next: false
 ---

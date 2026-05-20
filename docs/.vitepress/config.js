@@ -1,5 +1,5 @@
 export default {
-  base: '/NetGhost_site/',
+  base: '/',
   title: "NetGhost",
   description: "An awesome docs template built by me",
   themeConfig: {
@@ -35,7 +35,7 @@ export default {
    footer: {
       message: 'Выпущено под <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.', 
       copyright: 'Copyright © 2026 NetGhost'  
-    } 
+    }, 
 
   },
 };

@@ -8,14 +8,17 @@
       class="pdf-iframe"
     ></iframe>
 
-    <iframe
+  <a
       v-else
-      :src="`https://docs.google.com/viewer?url=${fullUrl}&embedded=true`"
-      class="pdf-iframe-mobile"
-    ></iframe>
-
-  </div>
-</template>
+    :href="src + '#toolbar=0'"
+    target="_blank"
+    rel="noopener"
+    class="pdf-button"
+  >
+    {{ label }}
+  </a>
+    </div>
+  </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
