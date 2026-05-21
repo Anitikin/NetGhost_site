@@ -48,7 +48,9 @@
             Он поможет вам разобраться в документах, ответит на вопросы
             и подскажет нужный раздел
           </p>
-          <a href="#" class="ai-section__btn">Болтать онлайн</a>
+          <button class="ai-section__btn" @click="window.dispatchEvent(new Event('open-netghost-chat'))">
+            Болтать онлайн
+          </button>
         </div>
         <div class="ai-section__ghost">
           <img src="/images/ghost_big.png" alt="assistant" width="180" />
