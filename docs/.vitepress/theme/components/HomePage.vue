@@ -43,14 +43,11 @@
     <section class="ai-section">
       <div class="ai-section__body">
         <div class="ai-section__text">
-          <p class="ai-section__label">Знакомьтесь, это AI-ассистент (Имя)</p>
+          <p class="ai-section__label">Знакомьтесь, это AI-ассистент</p>
           <p class="ai-section__desc">
             Он поможет вам разобраться в документах, ответит на вопросы
             и подскажет нужный раздел
           </p>
-          <button class="ai-section__btn" @click="window.dispatchEvent(new Event('open-netghost-chat'))">
-            Болтать онлайн
-          </button>
         </div>
         <div class="ai-section__ghost">
           <img src="/images/ghost_big.png" alt="assistant" width="180" />
