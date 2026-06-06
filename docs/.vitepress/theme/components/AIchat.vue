@@ -7,7 +7,7 @@ const md = new MarkdownIt()
 const visible = ref(false)
 const question = ref('')
 const messages = ref([
-  { role: 'assistant', text: 'Привет! Я юридический ассистент по информационной безопасности.' }
+  { role: 'assistant', text: ' Привет! Я правовой ассистент по информационной безопасности.\n\nМогу помочь:\n- -найти нужный закон или ГОСТ\n- -объяснить, что грозит за конкретные действия\n- -разобрать сложный текст документа\n- -объяснить термины ИБ\n\nПросто опишите ситуацию или задайте вопрос!' }
 ])
 const loading = ref(false)
 
@@ -112,7 +112,7 @@ async function sendQuestion() {
 </script>
 
 <template>
-  <button class="chat-toggle" @click="visible = !visible">💬 Поиск по сайту</button>
+  <button class="chat-toggle" @click="visible = !visible">💬 Правовой ассистент</button>
 
   <div v-if="visible" class="chat-window">
     <div class="messages">
