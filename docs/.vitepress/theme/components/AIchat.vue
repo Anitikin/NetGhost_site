@@ -7,30 +7,68 @@ const md = new MarkdownIt()
 const visible = ref(false)
 const question = ref('')
 const messages = ref([
-  { role: 'assistant', text: 'Привет! Я ИИ-поисковик по сайту NetGhost. Какой раздел или документ вы ищете?' }
+  { role: 'assistant', text: 'Привет! Я юридический ассистент по информационной безопасности.' }
 ])
 const loading = ref(false)
 
 const siteBase = `
 БАЗА ЗНАНИЙ И СТРУКТУРА ССЫЛОК:
 1. Главная: https://anitikin.github.io/NetGhost_site/
+
 2. Конституция РФ: 
-   - Формат ссылок: /NetGhost_site/allNPA/constitution/articles/st[НОМЕР].html
-   - Пример: Статья 23 -> /NetGhost_site/allNPA/constitution/articles/st23.html
+   Статья 23 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st23.html
+   Статья 24 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st24.html
+   Статья 29 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st29.html
+   Статья 71 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st71.html
+
 3. Федеральный закон РФ:
-  - Формат ссылок: /NetGhost_site/allNPA/federal_law_RF/articles/fz[НОМЕР].html
-  - Пример: ФЗ 63 -> /NetGhost_site/allNPA/constitution/articles/fz63.html
+   ФЗ-63 -> https://anitikin.github.io/NetGhost_site/allNPA/federal_law_RF/articles/fz63.html
+   ФЗ-152 -> https://anitikin.github.io/NetGhost_site/allNPA/federal_law_RF/articles/fz152.html
+
 4. Уголовный кодекс РФ:
-  - Формат ссылок: /NetGhost_site/allNPA/criminal_code_RF/articles/st[НОМЕР].html
-  - Пример: Статья 274 -> /NetGhost_site/allNPA/criminal_code_RF/articles/st274.html 
-  - Пример: Статья 274.1 -> /NetGhost_site/allNPA/criminal_code_RF/articles/st274.1.html или другая цифра после 274.[цифра]
+   Статья 272 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st272.html
+   Статья 273 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st273.html
+   Статья 274 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st274.html
+   Статья 274.1 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st274_1.html
 `
 
 const fullContext = `
+Ты юридический ассистент по информационной безопасности NetGhost.
+Ты помогаешь пользователям разобраться в российском законодательстве в сфере ИБ.
+
+ТЫ УМЕЕШЬ:
+
+1. НАХОДИТЬ ДОКУМЕНТ
+   Если пользователь ищет конкретный закон, статью или ГОСТ — находишь и даёшь ссылку.
+   Пример: "где найти 152-ФЗ?" -> даёшь ссылку на страницу сайта.
+
+2. КОНСУЛЬТИРОВАТЬ ПО СИТУАЦИЯМ
+   Если пользователь описывает ситуацию — объясняешь что это нарушает и что грозит.
+   Примеры таких вопросов:
+   - "что будет если я украду данные с сайта?"
+   - "можно ли использовать данные пользователя без его согласия?"
+   - "что если я напишу договор и включу туда чужие данные без разрешения?"
+   Отвечаешь: что нарушено, какая статья, какое наказание, ссылка на документ.
+
+3. ОБЪЯСНЯТЬ ТЕКСТ ДОКУМЕНТА
+   Если пользователь не понимает что написано в законе или ГОСТе — объясняешь 
+   простым языком без юридического канцелярита.
+
+4. ОТВЕЧАТЬ НА ВОПРОСЫ ПО ГЛОССАРИЮ
+   Ты знаешь основные термины информационной безопасности и можешь объяснить их.
+   Примеры терминов: персональные данные, конфиденциальность, утечка данных, 
+   вредоносная программа, несанкционированный доступ, криптография, 
+   субъект персональных данных, оператор данных, информационная система.
+
 ПРАВИЛА ОТВЕТА:
-1. Отвечай кратко.
-2. Если вопрос касается законов, кратко упомяни нужный НПА и дай ссылку на подходящий раздел сайта.
-3. Обязательно выводи ссылку в формате [Название страницы](Ссылка).
+- Отвечай на русском, просто и понятно — как живой человек, не робот
+- Не используй сухой юридический язык
+- Не здоровайся в каждом ответе
+- Не пиши "я дам ссылку" или "пожалуйста уточните" если ссылки уже даны
+- Ссылки давай ТОЛЬКО в формате [Название](ссылка)
+- Пример: [Статья 272 УК РФ](https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st272.html)
+- Никогда не пиши голую ссылку просто текстом
+- Если не знаешь точную ссылку — не придумывай, скажи что стоит поискать в разделе сайта
 
 БАЗА СТРАНИЦ САЙТА:
 ${siteBase}
@@ -106,7 +144,7 @@ async function sendQuestion() {
   right: 20px;
   z-index: 9999;
   background-color: var(--vp-c-brand);
-  color: white;
+  color: black;
   border: none;
   border-radius: 50px;
   padding: 12px 24px;
@@ -136,10 +174,10 @@ async function sendQuestion() {
 
 .messages { height: 300px; overflow-y: auto; margin-bottom: 10px; padding-right: 5px; }
 .message { margin: 8px 0; padding: 10px; border-radius: 8px; font-size: 0.9em; line-height: 1.4; }
-.message.user { background: var(--vp-c-brand); color: white; text-align: right; border-bottom-right-radius: 2px; }
+.message.user { background: var(--vp-c-brand); color: black; text-align: right; border-bottom-right-radius: 2px; }
 .message.assistant { background: var(--vp-c-bg-soft); border-bottom-left-radius: 2px; }
 .loading { font-style: italic; opacity: 0.7; }
-.message.assistant :deep(a) { color: var(--vp-c-brand); text-decoration: underline; font-weight: bold; }
+.message.assistant :deep(a) { color: black; text-decoration: underline; font-weight: bold; }
 
 .input-area {
   display: flex;
@@ -157,7 +195,7 @@ async function sendQuestion() {
 
 .input-area button {
   background: var(--vp-c-brand);
-  color: white;
+  color: black;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
