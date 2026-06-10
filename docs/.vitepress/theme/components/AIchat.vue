@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import MarkdownIt from 'markdown-it'
+import { siteKnowledge } from './siteKnowledge.js'
 
 const md = new MarkdownIt()
 
@@ -11,26 +12,9 @@ const messages = ref([
 ])
 const loading = ref(false)
 
-const siteBase = `
-БАЗА ЗНАНИЙ И СТРУКТУРА ССЫЛОК:
-1. Главная: https://anitikin.github.io/NetGhost_site/
-
-2. Конституция РФ: 
-   Статья 23 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st23.html
-   Статья 24 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st24.html
-   Статья 29 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st29.html
-   Статья 71 -> https://anitikin.github.io/NetGhost_site/allNPA/constitution/articles/st71.html
-
-3. Федеральный закон РФ:
-   ФЗ-63 -> https://anitikin.github.io/NetGhost_site/allNPA/federal_law_RF/articles/fz63.html
-   ФЗ-152 -> https://anitikin.github.io/NetGhost_site/allNPA/federal_law_RF/articles/fz152.html
-
-4. Уголовный кодекс РФ:
-   Статья 272 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st272.html
-   Статья 273 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st273.html
-   Статья 274 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st274.html
-   Статья 274.1 -> https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st274_1.html
-`
+const siteBase = siteKnowledge.map(item => 
+  `${item.title}\nКраткое содержание: ${item.summary}\nСсылка: ${item.url}`
+).join('\n---\n')
 
 const fullContext = `
 Ты юридический ассистент по информационной безопасности NetGhost.
@@ -69,6 +53,7 @@ const fullContext = `
 - Пример: [Статья 272 УК РФ](https://anitikin.github.io/NetGhost_site/allNPA/criminal_code_RF/articles/st272.html)
 - Никогда не пиши голую ссылку просто текстом
 - Если не знаешь точную ссылку — не придумывай, скажи что стоит поискать в разделе сайта
+- Если упоминаешь какой-то документ или статью ВСЕГДА давай ссылку на сайте
 
 БАЗА СТРАНИЦ САЙТА:
 ${siteBase}
