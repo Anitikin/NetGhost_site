@@ -21,9 +21,8 @@ export default {
     siteTitle: "NetGhost",
     nav: [
       { text: "О нас", link: "/about" },
-      { text: "Contact", link: "/contact" },
-      { text: "Guide", link: "/guide" },
-      { text: "Configs", link: "/configs" },
+      { text: "Руководство", link: "/guide" },
+      { text: "Контакты", link: "/contact" },
     ],
     
     sidebar: {
@@ -41,7 +40,7 @@ export default {
             { text: 'Международные стандарты и ГОСТы', link: 'allNPA/international_standards_GOST/index' },
             { text: 'Информационные письма', link: 'allNPA/information_letters/index' },
             { text: 'Методические рекомендации', link: 'allNPA/methodological_recommendations/index' },
-            { text: 'фициальные разъяснения', link: 'allNPA/official_explanations/index' },
+            { text: 'Официальные разъяснения', link: 'allNPA/official_explanations/index' },
           ],
         },
       ],

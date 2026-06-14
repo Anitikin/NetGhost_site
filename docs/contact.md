@@ -2,6 +2,10 @@
 url: https://anitikin.github.io/NetGhost_site//contact.html
 ---
 
-Источник: https://anitikin.github.io/NetGhost_site//contact.html
+# Наши контакты
 
-# Текст1
+По вопросам работы платформы NetGhost, сотрудничества или предложений по обновлению базы документов вы можете связаться с нашей командой по электронной почте:
+
+**netghost.project@yandex.ru** 
+
+Мы постараемся ответить вам в течение нескольких дней.
